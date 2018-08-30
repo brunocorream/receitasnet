@@ -1,10 +1,12 @@
-<h1>Receitas</h1>
+<h1><%= pluralize(@recipes.size, "Receita", "Receitas") %></h1>
 
 <ul>
     <% @recipes.each do |recipe| %>
         <li>Nome do prato: <%= recipe.name %></li>
-        <li>Itens: <%= recipe.stuff %></li>
-        <li>Calorias: <%= recipe.calories %></li>
+        <li>Itens: <%= truncate( recipe.stuff, length:15, separator: ' ') %></li>
+        <li>Calorias: 
+            <%= formata_caloria(recipe) %>
+        </li>
         <li>Modo de Preparo: <%= recipe.prepare_mode %></li>
         <li>Custo Médio: <%= number_to_currency(recipe.cost) %></li>
    <% end %>
