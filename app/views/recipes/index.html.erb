@@ -2,7 +2,7 @@
 
 <ul>
     <% @recipes.each do |recipe| %>
-        <li>Nome do prato: <%= recipe.name %></li>
+        <li>Nome do prato: <%= link_to recipe.name, recipe %></li>
         <li>Itens: <%= truncate( recipe.stuff, length:15, separator: ' ') %></li>
         <li>Calorias: 
             <%= formata_caloria(recipe) %>
