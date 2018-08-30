@@ -2,7 +2,11 @@
 
 <ul>
     <% @recipes.each do |recipe| %>
-        <li><%= recipe.name %> <%= recipe.stuff %> <%= recipe.calories %></li>
+        <li>Nome do prato: <%= recipe.name %></li>
+        <li>Itens: <%= recipe.stuff %></li>
+        <li>Calorias: <%= recipe.calories %></li>
+        <li>Modo de Preparo: <%= recipe.prepare_mode %></li>
+        <li>Custo Médio: <%= number_to_currency(recipe.cost) %></li>
    <% end %>
 </ul>
 
