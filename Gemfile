@@ -28,14 +28,14 @@ gem 'jbuilder', '~> 2.5'
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 
-gem 'bootstrap-sass'
-gem 'compass-rails'
-
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
+
+gem 'bootstrap-sass'
+# gem 'compass-rails' 
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -51,7 +51,7 @@ end
 
 group :production do
   gem 'pg'
-  gem 'rails_12factor'
+  # gem 'rails_12factor', '~> 0.0.3'
 end
 
 group :development do
