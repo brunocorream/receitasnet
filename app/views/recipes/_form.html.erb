@@ -1,5 +1,9 @@
 <%= form_for(@recipe) do |f| %>
     <p>
+        <%= f.label :Imagem %>
+        <%= f.text_field :poster, placeholder: ".gif, .jpeg, .png" %>
+    </p>
+    <p>
         <%= f.label :Nome %>
         <%= f.text_field :name %>
     </p>
@@ -8,12 +12,24 @@
         <%= f.text_area :stuff, cols: 20, rows: 5 %>
     </p>
     <p>
+        <%= f.label :Tipo %>
+        <%= f.text_field :kind %>
+    </p>
+    <p>
         <%= f.label :Calorias %>
         <%= f.number_field :calories %>
     </p>
     <p>
         <%= f.label :Modo_de_Preparo %>
         <%= f.text_area :prepare_mode, cols: 20, rows: 5 %>
+    </p>
+    <p>
+        <%= f.label :Tempo_de_Preparo %>
+        <%= f.time_select :duration %>
+    </p>
+    <p>
+        <%= f.label :Porções %>
+        <%= f.text_field :portion %>
     </p>
     <p>
         <%= f.label :Custo %>

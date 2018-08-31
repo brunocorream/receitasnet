@@ -7,11 +7,11 @@
 </div>
 <ul>
     <% @recipes.each do |recipe| %>
+        <li><%= imagem(recipe) %></li>
         <li>Nome do prato: <%= link_to recipe.name, recipe %></li>
         <li>Itens: <%= truncate( recipe.stuff, length:15, separator: ' ') %></li>
-        <li>Calorias: 
-            <%= formata_caloria(recipe) %>
-        </li>
+        <li>Calorias: <%= formata_caloria(recipe) %></li>
+        <li>Duração: <%= recipe.duration.to_formatted_s(:time) %> minutos</li>
         <li>Modo de Preparo: <%= recipe.prepare_mode %></li>
         <li>Custo Médio: <%= number_to_currency(recipe.cost) %></li>
    <% end %>
