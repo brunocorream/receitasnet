@@ -1,15 +1,31 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Receitalistanet</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <title>Receitas Online</title>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
   </head>
-
   <body>
-    <%= yield %>
+    <div class="container">
+      <div class="row">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+          <%= link_to image_tag('logo.png', size:'50', alt:'Página inicial'), root_path, class: 'navbar-brand' %>
+          <%= link_to 'Receitas Online', root_path, class: 'navbar-brand' %>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+              <%= link_to 'Receitas', root_path %>
+            </div>
+          </div>
+        </nav>
+        <%= yield %>
+      </div>
+    </div>
   </body>
 </html>
