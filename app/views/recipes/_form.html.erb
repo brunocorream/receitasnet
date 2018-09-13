@@ -1,4 +1,5 @@
 <%= form_for(@recipe) do |f| %>
+    <%= render 'layouts/errors' %>
     <p class="form-group">
         <%= f.label :Imagem %>
         <%= f.text_field :poster, placeholder: ".gif, .jpeg, .png", class:"form-control" %>
@@ -13,7 +14,7 @@
     </p>
     <p class="form-group">
         <%= f.label :Tipo %>
-        <%= f.text_field :kind, class:"form-control" %>
+        <%= f.select :kind, Recipe::KIND , prompt: 'Escolha uma opção', class:"form-control" %>
     </p>
     <p class="form-group">
         <%= f.label :Calorias %>
