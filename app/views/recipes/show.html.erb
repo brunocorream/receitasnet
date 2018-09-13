@@ -1,4 +1,5 @@
-<article>
+<div class="jumbotron">
+    <article>
     <header class="listaReceitasImg">
         <%= imagem(@recipe) %>
         <h1><%= @recipe.name %></h1>
@@ -18,8 +19,15 @@
     <h2>Custo</h2>
     <p><%= @recipe.cost %></p>
 </article>
+</div>
 <nav>
-    <%= link_to "Receitas", recipes_path %> |
-    <%= link_to "Editar Receita", edit_recipe_path(@recipe) %>
-    <%= link_to "Deletar Receita", recipe_path(@recipe), method: :delete, data:{ confirm: "Deseja realmente deletar esta receita?" } %>
+    <%= link_to recipes_path, class:'btn btn-outline-info' do %>
+        <i class="fas fa-home"> <span>Receitas</span></i>
+    <% end %>
+    <%= link_to edit_recipe_path(@recipe), class:'btn btn-outline-success' do %>
+        <i class="fas fa-pencil-alt"> <span>Editar Receita</span></i>
+    <% end %>
+    <%= link_to recipe_path(@recipe), method: :delete, data:{ confirm: "Deseja realmente deletar esta receita?" }, class:'btn btn-outline-danger' do %>
+        <i class="fas fa-trash-alt"> <span>Deletar Receita</span></i>
+    <% end %>
 </nav>

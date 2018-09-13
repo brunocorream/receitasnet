@@ -1,42 +1,42 @@
 <%= form_for(@recipe) do |f| %>
-    <p>
+    <p class="form-group">
         <%= f.label :Imagem %>
-        <%= f.text_field :poster, placeholder: ".gif, .jpeg, .png" %>
+        <%= f.text_field :poster, placeholder: ".gif, .jpeg, .png", class:"form-control" %>
     </p>
-    <p>
+    <p class="form-group">
         <%= f.label :Nome %>
-        <%= f.text_field :name %>
+        <%= f.text_field :name, class:"form-control" %>
     </p>
-    <p>
+    <p class="form-group">
         <%= f.label :Ingredientes %>
-        <%= f.text_area :stuff, cols: 20, rows: 5 %>
+        <%= f.text_area :stuff, cols: 20, rows: 5, class:"form-control" %>
     </p>
-    <p>
+    <p class="form-group">
         <%= f.label :Tipo %>
-        <%= f.text_field :kind %>
+        <%= f.text_field :kind, class:"form-control" %>
     </p>
-    <p>
+    <p class="form-group">
         <%= f.label :Calorias %>
-        <%= f.number_field :calories %>
+        <%= f.number_field :calories, class:"form-control" %>
     </p>
-    <p>
+    <p class="form-group">
         <%= f.label :Modo_de_Preparo %>
-        <%= f.text_area :prepare_mode, cols: 20, rows: 5 %>
+        <%= f.text_area :prepare_mode, cols: 20, rows: 5, class:"form-control" %>
     </p>
-    <p>
+    <p class="form-group">
         <%= f.label :Tempo_de_Preparo %>
-        <%= f.time_select :duration %>
+        <%= f.time_select :duration, class:"form-control" %>
     </p>
-    <p>
+    <p class="form-group">
         <%= f.label :Porções %>
-        <%= f.text_field :portion %>
+        <%= f.text_field :portion, class:"form-control" %>
     </p>
-    <p>
+    <p class="form-group">
         <%= f.label :Custo %>
-        <%= f.number_field :cost %>
+        <%= f.number_field :cost, class:"form-control" %>
     </p>
-    <p>
-    <%= f.submit %>
-    <%= link_to "Cancelar", root_path %>
+    <p class="form-group">
+    <%= f.submit "Salvar receita", class:"btn btn-outline-success" %>
+    <%= link_to "Cancelar alterações", root_path, class:"btn btn-outline-danger" %>
     </p>
 <% end %>
