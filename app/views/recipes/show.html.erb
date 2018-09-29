@@ -17,8 +17,9 @@
     <h2>Porções</h2>
     <p><%= pluralize(@recipe.portion, 'porção', 'porções') %></p>
     <h2>Custo</h2>
-    <p><%= @recipe.cost %></p>
+    <p><%= number_to_currency(@recipe.cost) %></p>
 </article>
+<%= link_to pluralize(@recipe.comments.size, 'Comentário', 'Comentários'), recipe_comments_path(@recipe) %>
 </div>
 <nav>
     <%= link_to recipes_path, class:'btn btn-outline-info' do %>

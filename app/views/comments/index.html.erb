@@ -1,0 +1,40 @@
+<div class="float-right d-block mb-5">
+    <%= link_to recipes_path, class:'btn btn-outline-info' do %>
+        <i class="fas fa-home"> <span>Voltar para receitas</span></i>
+    <% end %>
+</div>
+<div class="clearfix"></div>
+<% if @recipe.comments.size > 0 %>
+<div class="row">
+    <ul>
+        <% @comments.each do |comment| %>
+        <li class="mb-3">
+            <div class="card">
+                <div class="card-header">
+                    <% comment.name %> <small class="small_font_rating"> <% pluralize(comment.rating, 'estrela', 'estrelas') %>
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title"><small class="small_font"> - <%= time_ago_in_words(comment.created_at) %><small> escreveu:</h5>
+                    <p class="card-text"><%= comment.comment %></p>
+                </div>
+            </div>
+        </li>
+        <% end %>
+    </ul>
+</div>
+<% else %>
+    <div class="card mb-5">
+        <div class="card-header">
+            <h1>Sem comentários!?</h1>
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">Seja o primeiro a comentar sobre esta receita! ;)</h5>
+        </div>
+    </div>
+<% end %>
+<div class="clearfix"></div>
+<div class="float-right d-block">
+    <%= link_to recipes_path, class:'btn btn-outline-info' do %>
+        <i class="fas fa-home"> <span>Voltar para receitas</span></i>
+    <% end %>
+</div>

@@ -20,7 +20,7 @@
             <h4>Tempo de preparo:</h4>
             <p><%= recipe.duration.to_formatted_s(:time) %></p>
             <h4>Custo:</h4>
-            <p><%= recipe.cost %></p>
+            <p><%= number_to_currency(recipe.cost) %></p>
         </div>
     </div>
     <hr>
