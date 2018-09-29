@@ -1,5 +1,5 @@
 <%= form_for(@recipe) do |f| %>
-    <%= render 'layouts/errors' %>
+    <%= render 'layouts/errors', object: @recipe %>
     <p class="form-group">
         <%= f.label :Imagem %>
         <%= f.text_field :poster, placeholder: ".gif, .jpeg, .png", class:"form-control" %>

@@ -5,23 +5,25 @@
 </div>
 <div class="clearfix"></div>
 <% if @recipe.comments.size > 0 %>
-<div class="row">
-    <ul>
-        <% @comments.each do |comment| %>
-        <li class="mb-3">
-            <div class="card">
-                <div class="card-header">
-                    <% comment.name %> <small class="small_font_rating"> <% pluralize(comment.rating, 'estrela', 'estrelas') %>
-                </div>
-                <div class="card-body">
-                    <h5 class="card-title"><small class="small_font"> - <%= time_ago_in_words(comment.created_at) %><small> escreveu:</h5>
-                    <p class="card-text"><%= comment.comment %></p>
-                </div>
+    <% @comments.each do |comment| %>
+        <div class="card mb-3">
+            <div class="card-header">
+                <h3><%= comment.name %></h3> 
+                <small class="small_font_rating"> 
+                    <% pluralize(comment.rating, 'estrela', 'estrelas') %>
+                </small>
             </div>
-        </li>
-        <% end %>
-    </ul>
-</div>
+            <div class="card-body">
+                <h5 class="card-title">
+                    <small class="small_font">
+                        - <%= time_ago_in_words(comment.created_at) %>
+                    </small> 
+                    escreveu:
+                </h5>
+                <p class="card-text"><%= comment.comment %></p>
+            </div>
+        </div>
+    <% end %>
 <% else %>
     <div class="card mb-5">
         <div class="card-header">
@@ -33,7 +35,7 @@
     </div>
 <% end %>
 <div class="clearfix"></div>
-<div class="float-right d-block">
+<div class="float-right d-block mt-5">
     <%= link_to recipes_path, class:'btn btn-outline-info' do %>
         <i class="fas fa-home"> <span>Voltar para receitas</span></i>
     <% end %>
