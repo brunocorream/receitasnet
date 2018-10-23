@@ -7,21 +7,22 @@
         </h1>
     </div>
 </div>
-<% @recipes.each do |recipe| %>
-    <div class="row listaReceitasImg">
-        <div class="col-md-2">
-            <%= link_to imagem(recipe), recipe %>
+<div class="row listaReceitasImg">
+    <% @recipes.each do |recipe| %>
+        <div class="col-xs-12 col-sm-4 col-md-3">
+            <div class="card">
+                <%= link_to imagem(recipe), recipe %>
+                <div class="card-body">
+                    <h4 class="card-title"><%= link_to recipe.name , recipe %></h4>
+                    <p class="card-text"><%= truncate(recipe.stuff, lenght: 15 , separator: '') %></p>
+                    <h5>Calorias:</h5>
+                    <p><%= formata_caloria(recipe) %></p>
+                    <h5>Tempo de preparo:</h5>
+                    <p><%= recipe.duration.to_formatted_s(:time) %></p>
+                    <h5>Custo:</h5>
+                    <p><%= number_to_currency(recipe.cost) %></p>
+                </div>
+            </div>
         </div>
-        <div class="col-md-7">
-            <h3><%= link_to recipe.name , recipe %></h3>
-            <p><%= truncate(recipe.stuff, lenght: 15 , separator: '') %></p>
-            <h4>Calorias:</h4>
-            <p><%= formata_caloria(recipe) %></p>
-            <h4>Tempo de preparo:</h4>
-            <p><%= recipe.duration.to_formatted_s(:time) %></p>
-            <h4>Custo:</h4>
-            <p><%= number_to_currency(recipe.cost) %></p>
-        </div>
-    </div>
-    <hr>
-<% end %>
+    <% end %>
+</div>

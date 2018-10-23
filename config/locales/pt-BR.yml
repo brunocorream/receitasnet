@@ -3,6 +3,7 @@ pt-BR:
     models:
       recipe: Receita
       comment: Comentário
+      user: Usuário
     attributes:
       recipe:
         name: Nome da receita
@@ -18,6 +19,11 @@ pt-BR:
         name: Nome
         rating: Estrelas
         comment: Comentário
+      user:
+        name: Nome
+        email: E-mail
+        password: Senha
+        password_confirmation: Confirmação de senha
     errors:
       messages:
         record_invalid: 'A validação falhou: %{errors}'
